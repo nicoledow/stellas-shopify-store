@@ -8,6 +8,13 @@ export default function manageProducts(state = { products: [] }, action) {
             return {...state, requesting: true}
         case 'ADD_NEW_PRODUCT':
             return {...state, requesting: false, products: [...state.products, action.productData]}
+        case 'START_DELETING_PRODUCT_REQUEST':
+            return {...state, requesting: true}
+        case 'DELETE_PRODUCT':
+            console.log('state prods', state.products)
+            //debugger;
+            let filteredProducts = state.products.filter(prod => prod.id !== action.id)
+            return {...state, products: filteredProducts }
         default:
             return state;
     }

@@ -25,4 +25,10 @@ class ProductsController < ApplicationController
         )
     end
 
+    def destroy
+        #binding.pry
+        prod_id = params["id"]
+        RestClient.delete("https://#{ENV['SHOPIFY_API_KEY']}:#{ENV['SHOPIFY_ADMIN_PASSWORD']}@stellas-treats.myshopify.com/admin/api/2020-01/products/#{prod_id}.json")
+    end
+
 end

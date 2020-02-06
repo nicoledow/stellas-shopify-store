@@ -17,8 +17,6 @@ class ProductsContainer extends React.Component {
     }
 
     render() {
-    //    debugger;
-    //    return <p>products</p>
         if (this.props.products.products) {
             return this.props.products.products.map(prod => <Product data={prod} />)
         } else {
