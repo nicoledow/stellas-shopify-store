@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
         new_product_hash = {
             "product": {
                 "title": params["productTitle"],
-                "body_html": params["productDescripton"],
+                "body_html": "#{params["productDescription"]}",
                 "tags": params["productTags"]
             }
         }
