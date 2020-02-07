@@ -14,6 +14,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={ProductsContainer} />
+          <Route exact path='/products/:id' component={NewProductForm} />
           <Route exact path='/products/new' component={NewProductForm} />
         </Switch>
       </Router>

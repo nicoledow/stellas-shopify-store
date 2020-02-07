@@ -11,10 +11,10 @@ export default function manageProducts(state = { products: [] }, action) {
         case 'START_DELETING_PRODUCT_REQUEST':
             return {...state, requesting: true}
         case 'DELETE_PRODUCT':
-            console.log('state prods', state.products)
-            //debugger;
             let filteredProducts = state.products.filter(prod => prod.id !== action.id)
             return {...state, products: filteredProducts }
+        case 'START_EDIT_BOOK_REQ':
+            return {...state, requesting: true}
         default:
             return state;
     }
