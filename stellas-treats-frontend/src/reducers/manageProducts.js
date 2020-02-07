@@ -13,7 +13,7 @@ export default function manageProducts(state = { products: [] }, action) {
         case 'DELETE_PRODUCT':
             let filteredProducts = state.products.filter(prod => prod.id !== action.id)
             return {...state, products: filteredProducts }
-        case 'START_EDIT_BOOK_REQ':
+        case 'START_EDIT_PRODUCT_REQ':
             return {...state, requesting: true}
         default:
             return state;

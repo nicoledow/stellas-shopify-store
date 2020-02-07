@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ProductsContainer from './containers/ProductsContainer';
 import NewProductForm from './components/NewProductForm';
+import EditProductForm from './components/EditProductForm';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={ProductsContainer} />
-          <Route exact path='/products/:id' component={NewProductForm} />
+          <Route exact path='/products/:id/edit' component={EditProductForm} />
           <Route exact path='/products/new' component={NewProductForm} />
         </Switch>
       </Router>

@@ -10,6 +10,13 @@ class ProductsController < ApplicationController
         render json: products
     end
 
+    def show
+        product_data = RestClient.get("https://#{ENV['SHOPIFY_API_KEY']}:#{ENV['SHOPIFY_ADMIN_PASSWORD']}@stellas-treats.myshopify.com/admin/api/2020-01/products/#{params["id"]}.json")
+        product = JSON.parse(product_data)["product"]
+       # binding.pry
+        render json: product
+    end
+
     def create
         #binding.pry
         new_product_hash = {
@@ -23,6 +30,10 @@ class ProductsController < ApplicationController
             "https://#{ENV['SHOPIFY_API_KEY']}:#{ENV['SHOPIFY_ADMIN_PASSWORD']}@stellas-treats.myshopify.com/admin/api/2020-01/products.json",
             new_product_hash
         )
+    end
+
+    def update
+        binding.pry
     end
 
     def destroy
